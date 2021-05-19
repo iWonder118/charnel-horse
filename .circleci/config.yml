@@ -1,11 +1,32 @@
 version: 2.1
 jobs:
   build:
-    working_directory: ~/repo
+    working_directory: ~/go/src/charnel-horse
     docker:
-      - image: golang:1.16.4-alpine3.13
+      - image: google/cloud-sdk
     steps:
       - checkout
+      - setup_reomte_docker:
+        version: 18.06.0-ce
+      - run:
+        name: Setup CLOUD SDK
+        command: |
+          echo $GCLOUD_SERVICE_KEY | gcloud auth activate-service-account --key-file= -
+          gcloud --quiet config set project charnel-horse
+          gcloud --quite config set compute/zone asia-east1-b
+          gcloud --quite auth configure-docker
+      - run:
+        name: Push dokcer image
+        command: |
+          docker build -t api-server .
+          TAG=gcr.io/charnel-horse/api-server:pushed-'date +%Y%m%d%H%M%S'
+          docker tag api-server $TAG
+          docker push $TAG
+          LATEST_TAG=gvr.io/charnel-horse/api-server:latest
+          docker tag api-server $LATEST_TAG
+          docker push $LATEST_TAG
+
+
       # - restore_cache:
       #     keys:
       #       - go-mod-v4-{{ checksum "go.sum" }}
