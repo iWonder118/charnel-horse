@@ -11,7 +11,7 @@ jobs:
       - run:
           name: Setup CLOUD SDK
           command: |
-            echo $GCLOUD_SERVICE_KEY | gcloud auth activate-service-account --key-file= -
+            echo $GCLOUD_SERVICE_KEY | gcloud auth activate-service-account --key-file=-
             gcloud --quiet config set project charnel-horse
             gcloud --quite config set compute/zone asia-east1-b
             gcloud --quite auth configure-docker
