@@ -13,8 +13,8 @@ jobs:
           command: |
             echo $GCLOUD_SERVICE_KEY | gcloud auth activate-service-account --key-file=-
             gcloud --quiet config set project charnel-horse
-            gcloud --quite config set compute/zone asia-east1-b
-            gcloud --quite auth configure-docker
+            gcloud --quiet config set compute/zone asia-east1-b
+            gcloud --quiet auth configure-docker
       - run:
           name: Push dokcer image
           command: |
