@@ -19,7 +19,7 @@ jobs:
           name: Push dokcer image
           command: |
             docker build -t api-server .
-            TAG=gcr.io/charnel-horse/api-server:pushed-`date+%Y%m%d%H%M%S`
+            TAG=gcr.io/charnel-horse/api-server:pushed-`date +%Y%m%d%H%M%S`
             docker tag api-server $TAG
             docker push $TAG
             LATEST_TAG=gvr.io/charnel-horse/api-server:latest
