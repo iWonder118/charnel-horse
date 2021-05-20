@@ -22,7 +22,7 @@ jobs:
             TAG=gcr.io/charnel-horse/api-server:pushed-`date +%Y%m%d%H%M%S`
             docker tag api-server $TAG
             docker push $TAG
-            LATEST_TAG=gvr.io/charnel-horse/api-server:latest
+            LATEST_TAG=gcr.io/charnel-horse/api-server:latest
             docker tag api-server $LATEST_TAG
             docker push $LATEST_TAG
 
