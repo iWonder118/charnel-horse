@@ -1,0 +1,46 @@
+version: 2.1
+jobs:
+  build:
+    working_directory: ~/go/src/charnel-horse
+    docker:
+      - image: google/cloud-sdk
+    steps:
+      - checkout
+      - setup_remote_docker:
+          version: 18.06.0-ce
+      - run:
+          name: Setup CLOUD SDK
+          command: |
+            echo $GCLOUD_SERVICE_KEY | gcloud auth activate-service-account --key-file=-
+            gcloud --quiet config set project charnel-horse
+            gcloud --quiet config set compute/zone asia-east1-b
+            gcloud --quiet auth configure-docker
+      - run:
+          name: Push dokcer image
+          command: |
+            docker build -t api-server .
+            TAG=gcr.io/charnel-horse/api-server:pushed-`date +%Y%m%d%H%M%S`
+            docker tag api-server $TAG
+            docker push $TAG
+            LATEST_TAG=gcr.io/charnel-horse/api-server:latest
+            docker tag api-server $LATEST_TAG
+            docker push $LATEST_TAG
+
+
+      # - restore_cache:
+      #     keys:
+      #       - go-mod-v4-{{ checksum "go.sum" }}
+      # - run:
+      #     name: Install Dependencies
+      #     command: go mod download
+      # - save_cache:
+      #     key: go-mod-v4-{{ checksum "go.sum" }}
+      #     paths:
+      #       - "/go/pkg/mod"
+      # - run:
+      #     name: Run tests
+      #     command: |
+      #       mkdir -p /tmp/test-reports
+      #       gotestsum --junitfile /tmp/test-reports/unit-tests.xml
+      # - store_test_results:
+      #     path: /tmp/test-reports
