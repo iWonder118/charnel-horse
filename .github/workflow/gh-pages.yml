@@ -11,11 +11,11 @@ jobs:
     # ubuntu OS を仮想マシン上に用意する
     runs-on: ubuntu-18.04
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
 
     # Node.js環境のセットアップを行う
     - name: setup node
-      uses: actions/setup-node@v1
+      uses: actions/setup-node@v3
       with:
         node-version: '19.x'
     
