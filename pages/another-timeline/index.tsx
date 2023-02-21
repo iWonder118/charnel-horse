@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import { Inter } from '@next/font/google'
 import { useState } from 'react'
 import styles from '@/styles/Home.module.css'
 
@@ -23,7 +22,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <main className={styles.main}>
-        <div className={styles.container}>
+        <div className="{styles.container} text-8xl text-gray-600">
           <span>{twHz ? twHz : ""}</span>
         </div>
         <button onClick={handleClick}>Tweetを生成</button>
