@@ -1,8 +1,10 @@
 import { adminDB } from '@/firebase/server' //初期化用のファイルで作った db。自分のディレクトリ構成に合わせて path を変えてください
 
+type Message = {
+  text: string;
+};
 
-
-const message = ({ data }) => {
+const message = ( data: Message) => {
   return <>{data.text}</>
 }
 
