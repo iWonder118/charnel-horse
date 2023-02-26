@@ -5,7 +5,7 @@ const FIREBASE_SERVICE_ACCOUNT_KEY = require("../env/FIREBASE_SERVICE_ACCOUNT_KE
 
 if (!getApps()?.length) {
   initializeApp({
-    credential: cert(JSON.parse(FIREBASE_SERVICE_ACCOUNT_KEY as string)),
+    credential: cert(FIREBASE_SERVICE_ACCOUNT_KEY),
   });
 }
 
