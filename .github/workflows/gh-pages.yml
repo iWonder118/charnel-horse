@@ -30,7 +30,7 @@ jobs:
         env:
           JSON_DECODE: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_KEY }}
         run: |
-          mkdir ./env/ && echo n $JSON_DECODE | base64 --decode > ./env/FIREBASE_SERVICE_ACCOUNT_KEY.json
+          mkdir ./env/ && echo -n $JSON_DECODE | base64 --decode > ./env/FIREBASE_SERVICE_ACCOUNT_KEY.json
 
       - name: Setup Node.js
         uses: actions/setup-node@v2
