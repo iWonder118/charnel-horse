@@ -1,4 +1,4 @@
-import { adminDB } from '@/firebase/server' //初期化用のファイルで作った db。自分のディレクトリ構成に合わせて path を変えてください
+import { adminDB } from '@/firebase/server' 
 
 type Message = {
   text: string;
