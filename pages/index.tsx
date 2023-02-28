@@ -1,9 +1,6 @@
 import Head from 'next/head'
-import { Inter } from '@next/font/google'
 import { useState } from 'react'
 import styles from '@/styles/Home.module.css'
-
-const inter = Inter({ subsets: ['latin'] })
 
 const getTwHz = async () => {
   const response = await fetch("https://xtmfnoys41.execute-api.us-east-1.amazonaws.com/dev/tw_hz");
