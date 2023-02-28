@@ -1,5 +1,12 @@
 import Head from 'next/head'
-import Link from 'next/link'
+import { useState } from 'react'
+import styles from '@/styles/Home.module.css'
+
+const getTwHz = async () => {
+  const response = await fetch("https://xtmfnoys41.execute-api.us-east-1.amazonaws.com/dev/tw_hz");
+  const res = await response.json();
+  return res;
+}
 
 export default function Home() {
   return (
