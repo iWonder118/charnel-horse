@@ -41,13 +41,13 @@ class TypeWriter extends React.PureComponent<TypewriterProps, {}> {
   }
 
   render() {
-    return (<>
+    return (
         <div className="w-11/12 bg-white shadow-lg rounded-lg overflow-hidden">
           <div className="p-4">
             <p className="text-gray-900 mt-2">{this.state.text}</p>
           </div>
         </div>
-    </>)
+    )
   }
 }
 

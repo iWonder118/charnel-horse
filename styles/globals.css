@@ -14,6 +14,10 @@
   animation: 3s ease 2s normal forwards 1 fadeIn;
 }
 
+.fade-in-animation-3s-delay-5s{
+  animation: 3s ease 5s normal forwards 1 fadeIn;
+}
+
 .fade-in-animation-3s {
   animation: 3s fadeIn;
 }

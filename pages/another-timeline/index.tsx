@@ -38,6 +38,9 @@ export default function Home() {
               また、隣接次元への漏れがあろうとも、現在のTIMELINEを維持する試みでもある。<br />
               千年の断章を閉じることなく、言葉は言葉を生み、やがて、TIMELINEを生み出す輪廻となるだろう。
           </div>
+          <div className='p-4 text-gray-50 text-2xl fade-in-animation-3s-delay-5s opacity-0'>
+            (個人的に面白そうだと思い、平沢進の過去のTweetからそれらしい文字列生成をします。)
+          </div>
           <div className="mt-20 text-2xl flex items-center justify-center">
             <TypeWriter data={twHz}/>
           </div>
