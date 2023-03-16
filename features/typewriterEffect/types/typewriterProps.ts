@@ -1,3 +1,3 @@
 export type TypewriterProps = {
-    data: string[];
+    data: string;
 }
