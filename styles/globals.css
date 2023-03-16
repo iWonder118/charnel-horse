@@ -9,3 +9,17 @@
   margin: 0;
   font-family: 'Montserrat', sans-serif;
 }
+
+.fade-in-animation-3s-delay-2s{
+  animation: 3s ease 2s normal forwards 1 fadeIn;
+}
+
+.fade-in-animation-3s {
+  animation: 3s fadeIn;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  20% { opacity: 0; }
+  100% { opacity: 1; }
+}
