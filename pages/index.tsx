@@ -8,7 +8,7 @@ export default function Home() {
         <title>CHARNEL-HORSE</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <main className="bg-[url('/charnel_horse/back_image.png')] bg-cover  min-h-screen">
+      <main className="bg-[url('https://github.com/iWonder118/charnel-horse/blob/main/public/charnel_horse/back_image.png?raw=true')] bg-cover  min-h-screen">
         <header className="bg-white shadow">
           <nav className="container mx-auto flex justify-between items-center py-4">
             <a href="#" className="text-2xl font-bold">CHARNEL - HORSE</a>

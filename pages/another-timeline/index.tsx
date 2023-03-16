@@ -23,7 +23,7 @@ export default function Home() {
         <title>ANOTHER-TIMELINE</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <main className="bg-[url('/another_timeline/back_image.png')] bg-cover min-h-screen flex justify-center">
+      <main className="bg-[url('https://github.com/iWonder118/charnel-horse/blob/main/public/another_timeline/back_image.png?raw=true')] bg-cover min-h-screen flex justify-center">
         <div className='max-w-6xl bg-gray-700 bg-opacity-40'>
 
           <div className='text-gray-50 text-2xl pt-10 pl-4 font-thin fade-in-animation-3s-delay-2s opacity-0'>
